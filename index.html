@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IS216</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .profile-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .profile-picture {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            border: 5px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .bio {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .portfolio-link {
+            display: block;
+            margin: 20px auto;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: #007bff;
+        }
+        .portfolio-link:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 
@@ -21,7 +48,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/IS216/Week1/fanpage.html">Week1</a>
+                        <a class="nav-link" href="./IS216/Week1/fanpage.html">Week1</a>
                     </li>
                 </ul>
             </div>
@@ -30,9 +57,16 @@
 
     <!-- Content Section -->
     <div class="container mt-5">
-        <h1>Welcome to My IS216 WebPage</h1>
-        <p>This is Jia Wen</p>
-      
+        <h1>Welcome to My IS216 Webpage</h1>
+        
+        <!-- Profile Section -->
+        <div class="profile-container">
+            <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-picture">
+            <h2>Ng Jia Wen</h2>
+            <p class="bio">
+                Hi, I'm Jia Wen. This is my webpage for IS216. I like to sleep ;>
+            </p>
+        </div>
     </div>
 
     <!-- Footer -->
@@ -43,4 +77,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
