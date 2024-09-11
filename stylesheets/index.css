@@ -1,19 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;1,300&display=swap');
+
+* {
+    outline: none !important;
+    scroll-behavior: smooth;
+
+}
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /*This helps to make all the font in the body into poppins which i have imported from google*/
+}
+p {
+    font-size: 1.15rem;
+    /*Sets the paragraph font size to 1.15 rem across all the websites*/
+}
+
+.main-container h1, p{
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.header-top {
+    height: 120px;
+    background-color: white;
+}
+
 .profile-container {
     text-align: center;
     margin-top: 30px;
 }
+.profile-container h2 {
+    animation: fadeInDown 1s ease-in-out;
+}
+
 .profile-picture {
     border-radius: 50%;
     width: 300px;
     height: 300px;
     border: 5px solid #ddd;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     object-fit: cover;
 }
+
 .bio {
     margin-top: 20px;
     text-align: center;
 }
+
 .portfolio-link {
     display: block;
     margin: 20px auto;
@@ -21,6 +65,151 @@
     text-decoration: none;
     color: #007bff;
 }
+
 .portfolio-link:hover {
     text-decoration: underline;
+}
+
+
+.footer {
+    background-color: #8c8f8f;
+    /*  gray background color for footer */
+    padding: 1.5rem;
+    /* Padding for spacing inside the footer */
+}
+
+
+
+.footer .container {
+    max-width: 1140px;
+    /* Maximum width for the container */
+    margin: 0 auto;
+    /* Center the container */
+}
+
+.footer h2,
+.footer h5 {
+    margin-bottom: 1rem;
+    /* Spacing below headings */
+}
+
+
+.footer h5 {
+    font-size: 1.25rem;
+    /* Font size for section headings */
+    color: #ffffff;
+}
+
+/* About Us Section */
+.footer p {
+    color: #ffffff;
+    /* Light gray color for paragraph text */
+    line-height: 1.6;
+    /* Line height for better readability */
+}
+
+.footer-logo {
+    width: 100px;
+    /* Width of the logo */
+}
+
+/* Contact Us Section */
+.footer ul {
+    padding: 0;
+    margin: 0;
+}
+.footer p {
+    font-size: 1rem;
+}
+
+.footer ul li {
+    color: #ffffff;
+    /* Light gray color for list items */
+    font-size: 1rem;
+}
+
+/* Follow Us Section */
+.footer .footer-links {
+    padding: 0;
+    margin: 0;
+}
+
+.footer .footer-links .list-inline-item {
+    margin-right: 1rem;
+    /* Spacing between icons */
+}
+
+.footer .footer-links a {
+    color: #ffffff;
+    /* color for social media icons */
+    font-size: 1.5rem;
+    /* Font size for icons */
+    transition: color 0.3s;
+    /* Smooth color transition on hover */
+}
+
+.footer .footer-links a:hover {
+    color: #007bff;
+    /* Primary color on hover */
+}
+
+
+.countdown div {
+    position: relative;
+    width: 120px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    background: transparent;
+    border: 2px solid rgb(20, 20, 20);
+    color: #131212;
+    margin: 0 15px;
+    font-size: 3em;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 50px;
+    
+}
+
+.countdown div:before {
+    content: attr(data-label); /* Use data-label attribute for the text */
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    width: 105%;
+    height: 40px;
+    background: transparent;
+    color: #0f0f0f;
+    font-size: 0.35em;
+    line-height: 35px;
+    font-weight: 500;
+    text-align: center;
+   
+
+
+    /*Font-size,line-height, and font weight gives the text feels, for boldness and strongness so as to catch the user eyes*/
+}
+
+.countdown #day:before {
+    content: "Days";
+    display: inline-block;
+    /*i had to feeds the content of days into the countdown:before div tag, so it doesnt interfere with the formatting*/
+}
+
+.countdown #hour:before {
+    content: "Hours";
+    display: inline-block;
+    /*i had to feeds the content of hour into the countdown:before div tag, so it doesnt interfere with the formatting*/
+}
+
+.countdown #minute:before {
+    content: "Minutes";
+    display: inline-block;
+    /*i had to feeds the content of minute into the countdown:before div tag, so it doesnt interfere with the formatting*/
+}
+
+.countdown #second:before {
+    content: "Seconds";
+    display: inline-block;
+    /*i had to feeds the content of second into the countdown:before div tag, so it doesnt interfere with the formatting*/
 }
