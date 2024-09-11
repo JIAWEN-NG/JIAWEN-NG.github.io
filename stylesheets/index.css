@@ -1,0 +1,26 @@
+.profile-container {
+    text-align: center;
+    margin-top: 30px;
+}
+.profile-picture {
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    border: 5px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    object-fit: cover;
+}
+.bio {
+    margin-top: 20px;
+    text-align: center;
+}
+.portfolio-link {
+    display: block;
+    margin: 20px auto;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #007bff;
+}
+.portfolio-link:hover {
+    text-decoration: underline;
+}
