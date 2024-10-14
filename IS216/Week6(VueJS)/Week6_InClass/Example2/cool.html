@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normal (with Vue)</title>
+    <!-- VUE CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+
+<body>
+
+    <!-- single root link to the new Vue app -->
+    <div id="main">
+        <h1>
+            {{ greeting }}
+        </h1>
+        <!-- vue directive v-text  , returns the data properties in Vue -->
+        <h2 v-text="fullname">
+            <h2>
+
+                <!-- Vue directive v-html -->
+                <h3 v-html="pet"></h3>
+
+                <p>Fruits I currently have in my basket:</p>
+                <ul id="fruits">
+                    <!-- Vue will repeat generate <li> for N number of items in fruits data property -->
+                    <!-- Vue directive v-for -->
+                    <li v-for="fruit of fruits">
+                        {{ fruit }}
+                    </li>
+                </ul>
+                <!-- Debug button -->
+                <!-- <button onclick="populate_fruits()">Debug</button> -->
+                <hr>
+                New fruit to add:
+                <!-- Vue directive v-model , capture new user inputs -->
+                <input type="text" v-model="add_fruit_name">
+                <!-- Vue directive 
+                 v-on:click
+                  -->
+                <button v-on:click="add_fruit">Add Fruit</button>
+
+                <!-- debug -->
+                <h2>
+                    Userkey in new fruit: {{ add_fruit_name }}
+                </h2>
+                <hr>
+                Fruit to remove:
+                <input type="text" v-model="remove_fruit_name">
+                <button @click="remove_fruit">Remove Fruit</button>
+
+                <hr>
+                New link:
+                <input type="text" v-model="news_url" size="40">
+                <br>
+                Click
+                <!-- Vue directive 
+                 v-bind
+                 shorthand 
+                 :
+
+                 v-bind:src
+                 :src
+
+                 v-bind:href
+                 :href
+                  -->
+                <a v-bind:href="news_url" target="_blank">News webiste</a>
+                
+
+    </div>
+
+    <script src="cool.js"></script>
+</body>
+
+</html>

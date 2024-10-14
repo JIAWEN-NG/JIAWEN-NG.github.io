@@ -3,8 +3,8 @@
 * {
     outline: none !important;
     scroll-behavior: smooth;
-
 }
+
 @keyframes fadeInDown {
     0% {
         opacity: 0;
@@ -16,30 +16,33 @@
     }
 }
 
-
-
 body {
     font-family: 'Poppins', sans-serif;
-    /*This helps to make all the font in the body into poppins which i have imported from google*/
-}
-p {
-    font-size: 1.15rem;
-    /*Sets the paragraph font size to 1.15 rem across all the websites*/
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
-.main-container h1, p{
+p {
+    font-size: 1.15rem;
+}
+
+/* Animations */
+.main-container h1, p {
     animation: fadeInDown 1s ease-in-out;
 }
 
+/* Header */
 .header-top {
     height: 120px;
-    background-color: white;
+    background-color: var(--background-color);
 }
 
+/* Profile Section */
 .profile-container {
     text-align: center;
     margin-top: 30px;
 }
+
 .profile-container h2 {
     animation: fadeInDown 1s ease-in-out;
 }
@@ -58,6 +61,7 @@ p {
     text-align: center;
 }
 
+/* Portfolio Link */
 .portfolio-link {
     display: block;
     margin: 20px auto;
@@ -70,65 +74,49 @@ p {
     text-decoration: underline;
 }
 
-
+/* Footer */
 .footer {
-    background-color: #8c8f8f;
-    /*  gray background color for footer */
+    background-color: var(--footer-background);
     padding: 1.5rem;
-    /* Padding for spacing inside the footer */
 }
-
-
 
 .footer .container {
     max-width: 1140px;
-    /* Maximum width for the container */
     margin: 0 auto;
-    /* Center the container */
 }
 
-.footer h2,
-.footer h5 {
+.footer h2, .footer h5 {
     margin-bottom: 1rem;
-    /* Spacing below headings */
 }
 
 
-.footer h5 {
-    font-size: 1.25rem;
-    /* Font size for section headings */
-    color: #ffffff;
-}
-
-/* About Us Section */
 .footer p {
-    color: #ffffff;
-    /* Light gray color for paragraph text */
+    color: var(--text-color);
     line-height: 1.6;
-    /* Line height for better readability */
 }
 
 .footer-logo {
     width: 100px;
-    /* Width of the logo */
 }
 
-/* Contact Us Section */
 .footer ul {
     padding: 0;
     margin: 0;
 }
+
 .footer p {
     font-size: 1rem;
 }
+.footer h5 {
+    color: var(--text-color); /* Ensure header text adapts to dark mode */
+    font-size: 1.25rem;
+}
 
 .footer ul li {
-    color: #ffffff;
-    /* Light gray color for list items */
+    color: var(--text-color);
     font-size: 1rem;
 }
 
-/* Follow Us Section */
 .footer .footer-links {
     padding: 0;
     margin: 0;
@@ -136,80 +124,177 @@ p {
 
 .footer .footer-links .list-inline-item {
     margin-right: 1rem;
-    /* Spacing between icons */
 }
 
 .footer .footer-links a {
-    color: #ffffff;
-    /* color for social media icons */
+    color: var(--text-color);
     font-size: 1.5rem;
-    /* Font size for icons */
     transition: color 0.3s;
-    /* Smooth color transition on hover */
 }
 
 .footer .footer-links a:hover {
     color: #007bff;
-    /* Primary color on hover */
 }
 
-
+/* Countdown */
 .countdown div {
     position: relative;
     width: 120px;
     height: 100px;
     line-height: 100px;
     text-align: center;
-    background: transparent;
-    border: 2px solid rgb(20, 20, 20);
-    color: #131212;
+    background: var(--background-color); /* Use the CSS variable for background color */
+    border: 2px solid var(--text-color); /* Use the CSS variable for text color */
+    color: var(--text-color); /* Use the CSS variable for text color */
     margin: 0 15px;
     font-size: 3em;
     font-weight: 500;
     display: inline-block;
     margin-bottom: 50px;
-    
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
 }
 
 .countdown div:before {
-    content: attr(data-label); /* Use data-label attribute for the text */
+    content: attr(data-label);
     position: absolute;
     bottom: -40px;
     left: 0;
     width: 105%;
     height: 40px;
     background: transparent;
-    color: #0f0f0f;
+    color: var(--text-color); /* Use the CSS variable for text color */
     font-size: 0.35em;
     line-height: 35px;
     font-weight: 500;
     text-align: center;
-   
-
-
-    /*Font-size,line-height, and font weight gives the text feels, for boldness and strongness so as to catch the user eyes*/
+    transition: color 0.3s ease;
 }
 
 .countdown #day:before {
     content: "Days";
-    display: inline-block;
-    /*i had to feeds the content of days into the countdown:before div tag, so it doesnt interfere with the formatting*/
 }
 
 .countdown #hour:before {
     content: "Hours";
-    display: inline-block;
-    /*i had to feeds the content of hour into the countdown:before div tag, so it doesnt interfere with the formatting*/
 }
 
 .countdown #minute:before {
     content: "Minutes";
-    display: inline-block;
-    /*i had to feeds the content of minute into the countdown:before div tag, so it doesnt interfere with the formatting*/
 }
 
 .countdown #second:before {
     content: "Seconds";
-    display: inline-block;
-    /*i had to feeds the content of second into the countdown:before div tag, so it doesnt interfere with the formatting*/
+}
+
+/* Fade-in Effect */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.appear {
+    opacity: 1;
+}
+
+/* Dark/Light Mode Variables */
+body {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --navbar-background: #f8f9fa;
+    --card-background: #ffffff;
+    --footer-background: #e9ecef; /* Slightly darker gray for light mode */
+    --btn-color: #6c757d;
+}
+
+body.dark-mode {
+    --background-color: #121212;
+    --text-color: #f5f5f5;
+    --navbar-background: #333333;
+    --card-background: #1e1e1e;
+    --footer-background: #333333;
+    --btn-color: #444444;
+}
+
+/* Ensure the elements use the variables */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.navbar {
+    background-color: var(--navbar-background);
+}
+
+.card {
+    background-color: var(--card-background);
+}
+
+.footer {
+    background-color: var(--footer-background);
+}
+
+.btn {
+    background-color: var(--btn-color);
+    color: white;
+}
+  /* Gallery Section */
+
+  .gallery .card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    overflow: hidden;
+}
+
+.gallery .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.gallery .card img {
+    transition: transform 0.4s ease;
+}
+
+.gallery .card:hover img {
+    transform: scale(1.1);
+}
+
+.gallery .card-title {
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Image Overlay */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.4s ease;
+}
+
+.gallery .card:hover .card-overlay {
+    opacity: 1;
+}
+
+/* Add more space between the gallery and the footer */
+.portfolio-container {
+    margin-bottom: 50px;
+}
+.container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
 }
